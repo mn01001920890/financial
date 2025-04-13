@@ -13,7 +13,7 @@
       const rInput = parseFloat(document.getElementById("r").value);
       const r = rInput / 100;
       if (isNaN(r)) {
-        document.getElementById("result").innerText = "Please enter the rate of return.";
+        document.getElementById("result5").innerText = "Please enter the rate of return.";
         return;
       }
       let pv = 0;
@@ -21,7 +21,7 @@
       for (let i = 1; i <= yearCount; i++) {
         const cf = parseFloat(document.getElementById(`cf${i}`).value);
         if (isNaN(cf)) {
-          document.getElementById("result").innerText = `Please enter CF for year ${i}`;
+          document.getElementById("result5").innerText = `Please enter CF for year ${i}`;
           return;
         }
         const singlePV = cf / Math.pow(1 + r, i);
@@ -29,7 +29,7 @@
         details += `PV${i} = ${cf} / (1 + ${r.toFixed(2)})^${i} = ${singlePV.toFixed(2)}<br>`;
       }
       const resultText = `Total Present Value = ${pv.toFixed(2)}<br>` + details;
-      document.getElementById("result").innerHTML = resultText;
+      document.getElementById("result5").innerHTML = resultText;
     }
 
     function calcCF() {
